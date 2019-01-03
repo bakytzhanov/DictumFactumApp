@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "561699615990",
+    "firebase_url": "https://dictumfactum-4b440.firebaseio.com",
+    "project_id": "dictumfactum-4b440",
+    "storage_bucket": "dictumfactum-4b440.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:561699615990:android:27492ab419534534",
+        "android_client_info": {
+          "package_name": "com.android.jack.dictumfactum"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "561699615990-v1rnl1ua1gstp4j8g3l5ch1j60sakedm.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.android.jack.dictumfactum",
+            "certificate_hash": "fc325710a81ebdca665dc566ba63ccacfb508029"
+          }
+        },
+        {
+          "client_id": "561699615990-usrg7t3r5jb22i5ho67k9l2chjnuch4f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBZ62rmacc-fdASxBvZgYmGFm8hGs0xDEc"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "561699615990-usrg7t3r5jb22i5ho67k9l2chjnuch4f.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
