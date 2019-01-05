@@ -9,7 +9,7 @@
 
     <include
         android:id="@+id/toolbar"
-        layout="@layout/bar_layout"/>
+        layout="@layout/bar_layout" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -22,7 +22,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Login"
+            android:text="Войти"
             android:textSize="20sp"
             android:textStyle="bold"/>
 
@@ -44,14 +44,14 @@
             android:inputType="textPassword"
             android:layout_marginTop="10dp"
             app:met_floatingLabel="normal"
-            android:hint="Password"/>
+            android:hint="Пароль"/>
 
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="login"
+            android:text="Войти"
             android:id="@+id/btn_login"
-            android:background="@color/colorPrimaryDark"
+            android:background="#162541"
             android:layout_marginTop="10dp"
             android:textColor="#FFF"/>
 
