@@ -24,13 +24,13 @@
         android:layout_marginTop="50dp"
         android:layout_below="@id/dictum"
         android:id="@+id/login"
-        android:text="login"/>
+        android:text="Войти"/>
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/register"
-        android:text="register"
+        android:text="Регистрация"
         android:layout_below="@id/login"/>
 
 </RelativeLayout>
