@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
 
         android:layout_centerHorizontal="true"
-        android:text="Dictum Factum"
+        android:text="Dictum Factum 2"
         android:textSize="25sp"
         android:textStyle="bold"
         android:id="@+id/dictum"/>
