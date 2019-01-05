@@ -10,11 +10,12 @@
 
     tools:context=".StartActivity">
     <ImageView
+        android:id="@+id/imageview1"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:adjustViewBounds="true"
         android:scaleType="centerCrop"
-        android:src="@drawable/supremecourt2"/>
+        android:src="@drawable/supremecourt3"/>
     <ImageView
         android:id="@+id/themis"
         android:layout_width="257dp"
