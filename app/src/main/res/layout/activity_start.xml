@@ -1,15 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout android:id="@+id/FrameLayout1"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:adjustViewBounds="true"
-        android:scaleType="centerCrop"
-        android:src="@drawable/supremecourt2"/>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -19,7 +9,12 @@
     android:orientation="vertical"
 
     tools:context=".StartActivity">
-
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop"
+        android:src="@drawable/supremecourt2"/>
     <ImageView
         android:id="@+id/themis"
         android:layout_width="257dp"
@@ -64,4 +59,3 @@
         android:layout_below="@id/login"/>
 
 </RelativeLayout>
-</FrameLayout>
