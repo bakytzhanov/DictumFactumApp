@@ -41,17 +41,20 @@
     </android.support.v7.widget.Toolbar>
 
 
+        <android.support.design.widget.TabLayout
+            android:id="@+id/tab_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#162541"
+            app:tabSelectedTextColor="#ffffff"
+            app:tabIndicatorColor="#ffffff"
+            app:tabTextColor="#ffffff"/>
+
+
     </android.support.design.widget.AppBarLayout>
 
 
-    <android.support.design.widget.TabLayout
-        android:id="@+id/tab_layout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#162541"
-        app:tabSelectedTextColor="#162541"
-        app:tabIndicatorColor="#162541"
-        app:tabTextColor="#162541"/>
+
 
     <android.support.v4.view.ViewPager
         android:id="@+id/view_pager"

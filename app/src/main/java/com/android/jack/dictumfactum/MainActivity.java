@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.graphics.PorterDuff;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
@@ -16,6 +17,8 @@ import android.view.MenuItem;
 import android.widget.TableLayout;
 import android.widget.TextView;
 
+import com.android.jack.dictumfactum.Fragments.ChatsFragment;
+import com.android.jack.dictumfactum.Fragments.UsersFragment;
 import com.android.jack.dictumfactum.Model.User;
 import com.bumptech.glide.Glide;
 import com.google.firebase.auth.FirebaseAuth;
@@ -73,11 +76,19 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-        TableLayout tableLayout = findViewById(R.id.tab_layout);
+        TabLayout tabLayout = findViewById(R.id.tab_layout);
         ViewPager viewPager = findViewById(R.id.view_pager);
 
 
         ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(getSupportFragmentManager());
+
+
+        viewPagerAdapter.addFragment(new ChatsFragment(), "Чаты");
+        viewPagerAdapter.addFragment(new UsersFragment(), "Юристы");
+
+        viewPager.setAdapter(viewPagerAdapter);
+
+        tabLayout.setupWithViewPager(viewPager);
 
 
     }
