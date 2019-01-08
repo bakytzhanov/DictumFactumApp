@@ -18,6 +18,7 @@ import android.widget.TableLayout;
 import android.widget.TextView;
 
 import com.android.jack.dictumfactum.Fragments.ChatsFragment;
+import com.android.jack.dictumfactum.Fragments.ProfileFragment;
 import com.android.jack.dictumfactum.Fragments.UsersFragment;
 import com.android.jack.dictumfactum.Model.User;
 import com.bumptech.glide.Glide;
@@ -85,6 +86,7 @@ public class MainActivity extends AppCompatActivity {
 
         viewPagerAdapter.addFragment(new ChatsFragment(), "Чаты");
         viewPagerAdapter.addFragment(new UsersFragment(), "Юристы");
+        viewPagerAdapter.addFragment(new ProfileFragment(), "Профиль");
 
         viewPager.setAdapter(viewPagerAdapter);
 
