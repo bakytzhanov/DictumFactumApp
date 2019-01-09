@@ -24,7 +24,15 @@
         <activity
             android:name=".LoginActivity"
             android:parentActivityName=".StartActivity" />
-        <activity android:name=".MessageActivity"></activity>
+        <activity android:name=".MessageActivity" />
+        <activity android:name=".FeeActivity" />
+        <activity android:name=".RawActivity" />
+        <activity android:name=".FamilyActivity" />
+        <activity android:name=".WorkActivity" />
+        <activity android:name=".PoliceActivity" />
+        <activity android:name=".BorderActivity" />
+        <activity android:name=".LandActivity" />
+        <activity android:name=".AdminActivity"></activity>
     </application>
 
 </manifest>
