@@ -18,6 +18,7 @@ import android.widget.TableLayout;
 import android.widget.TextView;
 
 import com.android.jack.dictumfactum.Fragments.ChatsFragment;
+import com.android.jack.dictumfactum.Fragments.LawFragment;
 import com.android.jack.dictumfactum.Fragments.ProfileFragment;
 import com.android.jack.dictumfactum.Fragments.UsersFragment;
 import com.android.jack.dictumfactum.Model.User;
@@ -41,6 +42,14 @@ public class MainActivity extends AppCompatActivity {
 
     FirebaseUser firebaseUser;
     DatabaseReference reference;
+
+    private int[] tabIcons = {
+            R.drawable.law,
+            R.drawable.lawyers,
+            R.drawable.message,
+            R.drawable.user
+    };
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -83,15 +92,19 @@ public class MainActivity extends AppCompatActivity {
 
         ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(getSupportFragmentManager());
 
-
-        viewPagerAdapter.addFragment(new ChatsFragment(), "Чаты");
-        viewPagerAdapter.addFragment(new UsersFragment(), "Юристы");
-        viewPagerAdapter.addFragment(new ProfileFragment(), "Профиль");
+        viewPagerAdapter.addFragment(new LawFragment(), "");
+        viewPagerAdapter.addFragment(new UsersFragment(), "");
+        viewPagerAdapter.addFragment(new ChatsFragment(), "");
+        viewPagerAdapter.addFragment(new ProfileFragment(), "");
 
         viewPager.setAdapter(viewPagerAdapter);
 
         tabLayout.setupWithViewPager(viewPager);
 
+            tabLayout.getTabAt(0).setIcon(tabIcons[0]);
+            tabLayout.getTabAt(1).setIcon(tabIcons[1]);
+            tabLayout.getTabAt(2).setIcon(tabIcons[2]);
+            tabLayout.getTabAt(3).setIcon(tabIcons[3]);
 
     }
 
