@@ -35,7 +35,7 @@
                 android:layout_marginLeft="25dp"
 
                 android:textColor="#ffffff"
-                android:textStyle="bold"
+
                 android:layout_marginStart="25dp"/>
 
 
