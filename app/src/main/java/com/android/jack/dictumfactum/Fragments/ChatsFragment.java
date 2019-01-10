@@ -7,11 +7,14 @@ import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.android.jack.dictumfactum.Adapter.UserAdapter;
+import com.android.jack.dictumfactum.MainActivity;
 import com.android.jack.dictumfactum.Model.Chat;
 import com.android.jack.dictumfactum.Model.User;
 import com.android.jack.dictumfactum.R;
@@ -24,6 +27,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class ChatsFragment extends Fragment {
@@ -95,32 +99,34 @@ public class ChatsFragment extends Fragment {
         reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                mUsers.clear();
+                //mUsers.clear();
 
-
+                Object[] arr = mUsers.toArray();
                 for (DataSnapshot snapshot : dataSnapshot.getChildren()){
                     User user = snapshot.getValue(User.class);
 
                     for (String id : usersList){
                         if(user.getId().equals(id)){
-                            if(mUsers.size() != 0){
-                                if(mUsers.size() == 1) {
-                                    for (User user1 : mUsers) {
-                                        if (!user.getId().equals(user1.getId())) {
-                                            mUsers.add(user);
-                                        }
-                                    }
-                                }else{
-                                    mUsers.add(user);
 
+                            if(arr.length != 0){
+
+
+                                if (!mUsers.contains(user.getId())) {
+                                    Toast.makeText(getActivity(), "Цикл", Toast.LENGTH_SHORT).show();
+                                    mUsers.add(user);
                                 }
+
+
                             }else{
+                                Toast.makeText(getActivity(), "вне", Toast.LENGTH_SHORT).show();
+
                                 mUsers.add(user);
+                                break;
                             }
                         }
                     }
 
-                }
+                    }
 
                 userAdapter = new UserAdapter(getContext(), mUsers);
                 recyclerView.setAdapter(userAdapter);
