@@ -112,13 +112,11 @@ public class ChatsFragment extends Fragment {
 
 
                                 if (!mUsers.contains(user.getId())) {
-                                    Toast.makeText(getActivity(), "Цикл", Toast.LENGTH_SHORT).show();
                                     mUsers.add(user);
                                 }
 
 
                             }else{
-                                Toast.makeText(getActivity(), "вне", Toast.LENGTH_SHORT).show();
 
                                 mUsers.add(user);
                                 break;
