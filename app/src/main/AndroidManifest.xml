@@ -28,15 +28,23 @@
         <activity
             android:name=".LoginActivity"
             android:parentActivityName=".StartActivity" />
-        <activity android:name=".MessageActivity" />
-        <activity android:name=".FeeActivity" />
-        <activity android:name=".RawActivity" />
-        <activity android:name=".FamilyActivity" />
-        <activity android:name=".WorkActivity" />
-        <activity android:name=".PoliceActivity" />
-        <activity android:name=".BorderActivity" />
-        <activity android:name=".LandActivity" />
-        <activity android:name=".AdminActivity"></activity>
+        <activity android:name=".MessageActivity"/>
+        <activity android:name=".FeeActivity"
+            android:parentActivityName=".MainActivity"/>
+        <activity android:name=".RawActivity"
+            android:parentActivityName=".MainActivity"/>
+        <activity android:name=".FamilyActivity"
+            android:parentActivityName=".MainActivity"/>
+        <activity android:name=".WorkActivity"
+            android:parentActivityName=".MainActivity"/>
+        <activity android:name=".PoliceActivity"
+            android:parentActivityName=".MainActivity"/>
+        <activity android:name=".BorderActivity"
+            android:parentActivityName=".MainActivity"/>
+        <activity android:name=".LandActivity"
+            android:parentActivityName=".MainActivity"/>
+        <activity android:name=".AdminActivity"
+            android:parentActivityName=".MainActivity"></activity>
     </application>
 
 </manifest>

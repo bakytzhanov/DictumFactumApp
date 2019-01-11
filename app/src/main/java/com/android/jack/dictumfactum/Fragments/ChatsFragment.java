@@ -28,10 +28,13 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 public class ChatsFragment extends Fragment {
-
+  //  List<String> temp = new ArrayList<String>();
     private RecyclerView recyclerView;
 
     private UserAdapter userAdapter;
@@ -99,28 +102,120 @@ public class ChatsFragment extends Fragment {
         reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                //mUsers.clear();
-
-                Object[] arr = mUsers.toArray();
+              //  Object[] arr = mUsers.toArray();
+              //  Integer arr[] = new Integer[mUsers.size()];
+                mUsers.clear();
+               // mUsers.clear();
+                //Object[] arr = mUsers.toArray();
+              // Integer arr[] = new Integer[mUsers.size()];
+              //  String [] arr = mUsers.toArray(new String[mUsers.size()]);
                 for (DataSnapshot snapshot : dataSnapshot.getChildren()){
                     User user = snapshot.getValue(User.class);
 
                     for (String id : usersList){
-                        if(user.getId().equals(id)){
-
-                            if(arr.length != 0){
+                        if(user.getId().equals(id)) {
 
 
-                                if (!mUsers.contains(user.getId())) {
+
+                            mUsers.add(user);
+                            Toast.makeText(getActivity(), "clean", Toast.LENGTH_SHORT).show();
+List<Object> deduped = mUsers.stream().distinct().collect(Collectors.toList());
+                      /*      if(mUsers.size() != 0) {
+
+                                if(mUsers.size() == 1) {
+
+                                    for (User user1 : mUsers) {
+                                        if (!user.getId().equals(user1.getId())) {
+                                            mUsers.add(user);
+
+                                        }
+                                    }
+
+
+
+
+
+                                }else{
                                     mUsers.add(user);
+                                    Toast.makeText(getActivity(), "else", Toast.LENGTH_SHORT).show();
+
                                 }
 
+*/
 
-                            }else{
 
+
+                               /* Toast.makeText(getActivity(), "getid" + user.getId() + "id" + id, Toast.LENGTH_SHORT).show();
+
+                                for (int i = 0; i < temp.size(); i++) {
+                                    if (!temp.contains(user.getId())) {
+
+                                        mUsers.add(user);
+
+                                        Toast.makeText(getActivity(), "Getid" + user.getId() + "id" + id, Toast.LENGTH_SHORT).show();
+
+                                    }
+                                }
+                                Toast.makeText(getActivity(), "size" + mUsers.size(), Toast.LENGTH_SHORT).show();
+                                temp.add(user.getId());*/
+                          /*  if (mUsers.size() != 0) {
+
+                                // if (arr.length == 1) {
+                             //   for (User user1: mUsers) {
+                                    if (!user.getId().equals(mUsers.get(mUsers.size()-1))) {
+                                        mUsers.add(user);
+
+                                    }
+
+                                //}
+
+                            }*/
+
+
+                                //    if(arr.length != 0){
+
+                                //  for(int i = 0; i <arr.length; i++) {
+
+                                // if (!mUsers.contains(user.getId().equals(id))) {
+                                //   mUsers.add(user);
+
+                                // }
+                                // }
+
+                                // }else{
+
+                                //    if (!mUsers.contains(user.getId())) {
+                                //mUsers.add(user);
+
+                                //}
+
+     /*                       if(mUsers.size() != 0){
+                                if(mUsers.size()==1) {
+                                    for (User user1 : mUsers) {
+                                        if (!user.getId().equals(user1.getId())) {
+                                            mUsers.add(user);
+                                            Toast.makeText(getActivity(), "size" + mUsers.size() + "user.getId" + user.getId(), Toast.LENGTH_SHORT).show();
+
+                                        }
+                                    }
+                                }else {
+                                  //  for(int i = 0; i<mUsers.size(); i++) {
+                                     //   if (!mUsers.get(i).equals(user.getId())) {
+                                            mUsers.add(user);
+                                            Toast.makeText(getActivity(), "7size" + mUsers.size() + "user.getId" + user.getId(), Toast.LENGTH_SHORT).show();
+                                    //    }
+                                  //  }
+                                }
+                            }else {
                                 mUsers.add(user);
-                                break;
                             }
+
+*/
+                       /*     }else {
+                                mUsers.add(user);
+                          //      temp.add(user.getId());
+                            }*/
+
                         }
                     }
 
