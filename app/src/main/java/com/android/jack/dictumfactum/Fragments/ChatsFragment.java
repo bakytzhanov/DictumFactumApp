@@ -29,6 +29,7 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
+import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
@@ -119,8 +120,15 @@ public class ChatsFragment extends Fragment {
 
                             mUsers.add(user);
                             Toast.makeText(getActivity(), "clean", Toast.LENGTH_SHORT).show();
-List<Object> deduped = mUsers.stream().distinct().collect(Collectors.toList());
-                      /*      if(mUsers.size() != 0) {
+                            List<String> strings = new ArrayList<>(mUsers.size());
+                            for (Object object : mUsers) {
+                                strings.add(object != null ? object.toString() : null);
+                            }
+                            Set<String> listWithoutDuplicates = new LinkedHashSet<String>(strings);
+
+                            strings.clear();
+                            strings.addAll(listWithoutDuplicates)
+                     /*      if(mUsers.size() != 0) {
 
                                 if(mUsers.size() == 1) {
 
