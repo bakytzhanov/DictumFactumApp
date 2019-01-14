@@ -117,112 +117,21 @@ public class ChatsFragment extends Fragment {
                         if(user.getId().equals(id)) {
 
 
-
                             mUsers.add(user);
-                            Toast.makeText(getActivity(), "clean", Toast.LENGTH_SHORT).show();
-                            List<String> strings = new ArrayList<>(mUsers.size());
-                            for (Object object : mUsers) {
-                                strings.add(object != null ? object.toString() : null);
+
+                            int count = mUsers.size();
+
+                            for (int i = 0; i < count; i++)
+                            {
+                                for (int j = i + 1; j < count; j++)
+                                {
+                                    if (mUsers.get(i).equals(mUsers.get(j)))
+                                    {
+                                        mUsers.remove(j--);
+                                        count--;
+                                    }
+                                }
                             }
-                            Set<String> listWithoutDuplicates = new LinkedHashSet<String>(strings);
-
-                            strings.clear();
-                            strings.addAll(listWithoutDuplicates)
-                     /*      if(mUsers.size() != 0) {
-
-                                if(mUsers.size() == 1) {
-
-                                    for (User user1 : mUsers) {
-                                        if (!user.getId().equals(user1.getId())) {
-                                            mUsers.add(user);
-
-                                        }
-                                    }
-
-
-
-
-
-                                }else{
-                                    mUsers.add(user);
-                                    Toast.makeText(getActivity(), "else", Toast.LENGTH_SHORT).show();
-
-                                }
-
-*/
-
-
-
-                               /* Toast.makeText(getActivity(), "getid" + user.getId() + "id" + id, Toast.LENGTH_SHORT).show();
-
-                                for (int i = 0; i < temp.size(); i++) {
-                                    if (!temp.contains(user.getId())) {
-
-                                        mUsers.add(user);
-
-                                        Toast.makeText(getActivity(), "Getid" + user.getId() + "id" + id, Toast.LENGTH_SHORT).show();
-
-                                    }
-                                }
-                                Toast.makeText(getActivity(), "size" + mUsers.size(), Toast.LENGTH_SHORT).show();
-                                temp.add(user.getId());*/
-                          /*  if (mUsers.size() != 0) {
-
-                                // if (arr.length == 1) {
-                             //   for (User user1: mUsers) {
-                                    if (!user.getId().equals(mUsers.get(mUsers.size()-1))) {
-                                        mUsers.add(user);
-
-                                    }
-
-                                //}
-
-                            }*/
-
-
-                                //    if(arr.length != 0){
-
-                                //  for(int i = 0; i <arr.length; i++) {
-
-                                // if (!mUsers.contains(user.getId().equals(id))) {
-                                //   mUsers.add(user);
-
-                                // }
-                                // }
-
-                                // }else{
-
-                                //    if (!mUsers.contains(user.getId())) {
-                                //mUsers.add(user);
-
-                                //}
-
-     /*                       if(mUsers.size() != 0){
-                                if(mUsers.size()==1) {
-                                    for (User user1 : mUsers) {
-                                        if (!user.getId().equals(user1.getId())) {
-                                            mUsers.add(user);
-                                            Toast.makeText(getActivity(), "size" + mUsers.size() + "user.getId" + user.getId(), Toast.LENGTH_SHORT).show();
-
-                                        }
-                                    }
-                                }else {
-                                  //  for(int i = 0; i<mUsers.size(); i++) {
-                                     //   if (!mUsers.get(i).equals(user.getId())) {
-                                            mUsers.add(user);
-                                            Toast.makeText(getActivity(), "7size" + mUsers.size() + "user.getId" + user.getId(), Toast.LENGTH_SHORT).show();
-                                    //    }
-                                  //  }
-                                }
-                            }else {
-                                mUsers.add(user);
-                            }
-
-*/
-                       /*     }else {
-                                mUsers.add(user);
-                          //      temp.add(user.getId());
-                            }*/
 
                         }
                     }
@@ -233,6 +142,8 @@ public class ChatsFragment extends Fragment {
                 recyclerView.setAdapter(userAdapter);
 
             }
+
+
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {

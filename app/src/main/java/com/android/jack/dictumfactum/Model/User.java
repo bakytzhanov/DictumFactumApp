@@ -6,6 +6,7 @@ public class User {
     private String username;
     private String imageURL;
     private String status;
+    private String s;
 
     public User(String id, String username, String imageURL, String status) {
         this.id = id;
@@ -15,6 +16,9 @@ public class User {
 
     }
 
+    public User(String s) {
+        this.s = s;
+    }
 
     public User() {
     }
@@ -51,4 +55,5 @@ public class User {
     public void setStatus(String status) {
         this.status = status;
     }
+
 }
