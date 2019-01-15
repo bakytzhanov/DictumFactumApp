@@ -16,9 +16,11 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TableLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.android.jack.dictumfactum.Fragments.ChatsFragment;
 import com.android.jack.dictumfactum.Fragments.LawFragment;
+import com.android.jack.dictumfactum.Fragments.LawyerFragment;
 import com.android.jack.dictumfactum.Fragments.ProfileFragment;
 import com.android.jack.dictumfactum.Fragments.UsersFragment;
 import com.android.jack.dictumfactum.Model.User;
@@ -41,6 +43,9 @@ public class MainActivity extends AppCompatActivity {
     CircleImageView profile_image;
     TextView username;
 
+
+
+
     FirebaseUser firebaseUser;
     DatabaseReference reference;
 
@@ -58,12 +63,15 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
+
+
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("");
 
         profile_image = findViewById(R.id.profile_image);
         username = findViewById(R.id.username);
+
 
         firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
         reference = FirebaseDatabase.getInstance().getReference("Users").child(firebaseUser.getUid());
@@ -78,6 +86,9 @@ public class MainActivity extends AppCompatActivity {
                 } else {
                     Glide.with(MainActivity.this).load(user.getImageURL()).into(profile_image);
                 }
+
+
+
             }
 
             @Override
@@ -93,10 +104,30 @@ public class MainActivity extends AppCompatActivity {
 
         ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(getSupportFragmentManager());
 
-        viewPagerAdapter.addFragment(new LawFragment(), "");
+
+
+
+
+            viewPagerAdapter.addFragment(new LawFragment(), "");
+
+  //  viewPagerAdapter.addFragment(new LawyerFragment(), "");
+
+
+
         viewPagerAdapter.addFragment(new UsersFragment(), "");
-        viewPagerAdapter.addFragment(new ChatsFragment(), "");
-        viewPagerAdapter.addFragment(new ProfileFragment(), "");
+
+
+
+
+
+
+
+            viewPagerAdapter.addFragment(new ChatsFragment(), "");
+            viewPagerAdapter.addFragment(new ProfileFragment(), "");
+
+
+
+
 
         viewPager.setAdapter(viewPagerAdapter);
 

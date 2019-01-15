@@ -26,7 +26,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class UsersFragment extends Fragment {
+public class LawyerFragment extends Fragment {
 
 
     private RecyclerView recyclerView;
@@ -42,7 +42,7 @@ public class UsersFragment extends Fragment {
                              Bundle savedInstanceState) {
 
 
-        View view = inflater.inflate(R.layout.fragment_users, container, false);
+        View view = inflater.inflate(R.layout.fragment_lawyer, container, false);
 
 
         recyclerView = view.findViewById(R.id.recycler_view);
@@ -71,10 +71,10 @@ public class UsersFragment extends Fragment {
                     User user = snapshot.getValue(User.class);
 
                     assert user != null;
-                    if(!user.getId().equals(firebaseUser.getUid())){
+                    if(!user.getId().equals(firebaseUser.getUid()) && user.getLawyer_status().equals("notlawyer")){
 
-                        if (user.getLawyer_status().equals("lawyer"))
-                            mUsers.add(user);
+
+                        mUsers.add(user);
 
 
                     }
