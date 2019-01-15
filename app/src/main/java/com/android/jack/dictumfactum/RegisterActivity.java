@@ -9,6 +9,8 @@ import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.RadioButton;
 import android.widget.Toast;
 
 
@@ -27,6 +29,10 @@ public class RegisterActivity extends AppCompatActivity {
 
     MaterialEditText username, email, password;
     Button btn_register;
+
+    RadioButton rb1;
+    RadioButton rb2;
+    String txt_lawyer_status;
 
 
     FirebaseAuth auth;
@@ -48,6 +54,8 @@ public class RegisterActivity extends AppCompatActivity {
         email = findViewById(R.id.email);
         password = findViewById(R.id.password);
         btn_register = findViewById(R.id.btn_register);
+        rb1 = findViewById(R.id.rb1);
+        rb2 = findViewById(R.id.rb2);
 
 
         auth = FirebaseAuth.getInstance();
@@ -59,8 +67,18 @@ public class RegisterActivity extends AppCompatActivity {
                 String txt_email = email.getText().toString();
                 String txt_password = password.getText().toString();
 
+                if(rb1.isChecked()){
+                    txt_lawyer_status = "notlawyer";
+                    rb2.setChecked(false);
+                }
 
-                if (TextUtils.isEmpty(txt_username) || TextUtils.isEmpty(txt_email) || TextUtils.isEmpty(txt_password)){
+                if(rb2.isChecked()){
+                    txt_lawyer_status = "lawyer";
+                    rb1.setChecked(false);
+                }
+
+
+                if (TextUtils.isEmpty(txt_username) || TextUtils.isEmpty(txt_email) || TextUtils.isEmpty(txt_password) || TextUtils.isEmpty(txt_lawyer_status)){
                     Toast.makeText(RegisterActivity.this, "All fields are required", Toast.LENGTH_SHORT).show();
                 }else if (txt_password.length()<6){
                     Toast.makeText(RegisterActivity.this, "Password must be at least 6 characters", Toast.LENGTH_SHORT).show();
@@ -94,6 +112,13 @@ public class RegisterActivity extends AppCompatActivity {
                             hashMap.put("username", username);
                             hashMap.put("imageURL", "default");
                             hashMap.put("status", "offline");
+
+
+                            if(txt_lawyer_status.equals("notlawyer")){
+                                hashMap.put("lawyer_status", "notlawyer");
+                            }else{
+                                hashMap.put("lawyer_status", "lawyer");
+                            }
 
 
                             reference.setValue(hashMap).addOnCompleteListener(new OnCompleteListener<Void>() {

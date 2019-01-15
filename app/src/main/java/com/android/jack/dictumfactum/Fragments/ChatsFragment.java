@@ -117,6 +117,7 @@ public class ChatsFragment extends Fragment {
                         if(user.getId().equals(id)) {
 
 
+
                             mUsers.add(user);
 
                             int count = mUsers.size();
