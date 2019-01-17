@@ -10,10 +10,13 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.android.jack.dictumfactum.Adapter.UserAdapter;
+import com.android.jack.dictumfactum.MainActivity;
 import com.android.jack.dictumfactum.Model.User;
 import com.android.jack.dictumfactum.R;
+import com.bumptech.glide.Glide;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -34,7 +37,7 @@ public class UsersFragment extends Fragment {
     private UserAdapter userAdapter;
     private List<User> mUsers;
 
-
+    TextView txt_title;
 
 
     @Override
@@ -49,6 +52,7 @@ public class UsersFragment extends Fragment {
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
+        txt_title = view.findViewById(R.id.txt_title);
 
         mUsers = new ArrayList<>();
 
@@ -61,14 +65,107 @@ public class UsersFragment extends Fragment {
     private void readUsers() {
 
         final FirebaseUser firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
-        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Users");
 
+
+        DatabaseReference reference1 = FirebaseDatabase.getInstance().getReference("Users").child(firebaseUser.getUid());
+        reference1.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                User user1 = dataSnapshot.getValue(User.class);
+
+                if(user1.getLawyer_status().equals("lawyer")){
+                    txt_title.setText("Список пользователей");
+                    DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Users");
+                    reference.addValueEventListener(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                            mUsers.clear();
+                            for (DataSnapshot snapshot : dataSnapshot.getChildren()){
+                                User user = snapshot.getValue(User.class);
+
+
+
+                                assert user != null;
+                                if(!user.getId().equals(firebaseUser.getUid())){
+
+                                    if (user.getLawyer_status().equals("notlawyer"))
+                                        mUsers.add(user);
+
+
+                                }
+                            }
+
+
+                            userAdapter = new UserAdapter(getContext(), mUsers, false);
+                            recyclerView.setAdapter(userAdapter);
+
+
+                        }
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                        }
+                    });
+
+
+                }else{
+                    txt_title.setText("Список юристов");
+                    DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Users");
+                    reference.addValueEventListener(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                            mUsers.clear();
+                            for (DataSnapshot snapshot : dataSnapshot.getChildren()){
+                                User user = snapshot.getValue(User.class);
+
+
+
+                                assert user != null;
+                                if(!user.getId().equals(firebaseUser.getUid())){
+
+                                    if (user.getLawyer_status().equals("lawyer"))
+                                        mUsers.add(user);
+
+
+                                }
+                            }
+
+
+                            userAdapter = new UserAdapter(getContext(), mUsers, false);
+                            recyclerView.setAdapter(userAdapter);
+
+
+                        }
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                        }
+                    });
+                }
+
+
+
+
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
+   /*     DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Users");
         reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 mUsers.clear();
                 for (DataSnapshot snapshot : dataSnapshot.getChildren()){
                     User user = snapshot.getValue(User.class);
+
+
 
                     assert user != null;
                     if(!user.getId().equals(firebaseUser.getUid())){
@@ -91,7 +188,7 @@ public class UsersFragment extends Fragment {
             public void onCancelled(@NonNull DatabaseError databaseError) {
 
             }
-        });
+        });*/
 
     }
 

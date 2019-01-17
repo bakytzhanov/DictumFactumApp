@@ -11,11 +11,14 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.android.jack.dictumfactum.Model.User;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.rengwuxian.materialedittext.MaterialEditText;
+
+import java.util.List;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -23,6 +26,8 @@ public class LoginActivity extends AppCompatActivity {
     Button btn_login;
 
     FirebaseAuth auth;
+
+
 
 
     @Override
@@ -47,6 +52,7 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View view) {
                 String txt_email = email.getText().toString();
                 String txt_password = password.getText().toString();
+
 
                 if (TextUtils.isEmpty(txt_email) || TextUtils.isEmpty(txt_password)){
                     Toast.makeText(LoginActivity.this, "All fields are required", Toast.LENGTH_SHORT).show();
