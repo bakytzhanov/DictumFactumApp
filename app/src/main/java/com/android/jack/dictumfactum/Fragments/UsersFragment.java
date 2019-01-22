@@ -7,9 +7,12 @@ import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import com.android.jack.dictumfactum.Adapter.UserAdapter;
@@ -23,6 +26,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
@@ -38,6 +42,8 @@ public class UsersFragment extends Fragment {
     private List<User> mUsers;
 
     TextView txt_title;
+
+
 
 
     @Override
@@ -59,8 +65,12 @@ public class UsersFragment extends Fragment {
         readUsers();
 
 
+
+
         return view;
     }
+
+
 
     private void readUsers() {
 
@@ -71,22 +81,21 @@ public class UsersFragment extends Fragment {
         reference1.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                User user1 = dataSnapshot.getValue(User.class);
+                    User user1 = dataSnapshot.getValue(User.class);
 
-                if(user1.getLawyer_status().equals("lawyer")){
+                if (user1.getLawyer_status().equals("lawyer")) {
                     txt_title.setText("Список пользователей");
                     DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Users");
                     reference.addValueEventListener(new ValueEventListener() {
                         @Override
                         public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                             mUsers.clear();
-                            for (DataSnapshot snapshot : dataSnapshot.getChildren()){
+                            for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
                                 User user = snapshot.getValue(User.class);
 
 
-
                                 assert user != null;
-                                if(!user.getId().equals(firebaseUser.getUid())){
+                                if (!user.getId().equals(firebaseUser.getUid())) {
 
                                     if (user.getLawyer_status().equals("notlawyer"))
                                         mUsers.add(user);
@@ -109,20 +118,19 @@ public class UsersFragment extends Fragment {
                     });
 
 
-                }else{
+                } else {
                     txt_title.setText("Список юристов");
                     DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Users");
                     reference.addValueEventListener(new ValueEventListener() {
                         @Override
                         public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                             mUsers.clear();
-                            for (DataSnapshot snapshot : dataSnapshot.getChildren()){
+                            for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
                                 User user = snapshot.getValue(User.class);
 
 
-
                                 assert user != null;
-                                if(!user.getId().equals(firebaseUser.getUid())){
+                                if (!user.getId().equals(firebaseUser.getUid())) {
 
                                     if (user.getLawyer_status().equals("lawyer"))
                                         mUsers.add(user);
@@ -147,9 +155,7 @@ public class UsersFragment extends Fragment {
 
 
 
-
-
-            }
+        }
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
@@ -157,38 +163,7 @@ public class UsersFragment extends Fragment {
             }
         });
 
-   /*     DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Users");
-        reference.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                mUsers.clear();
-                for (DataSnapshot snapshot : dataSnapshot.getChildren()){
-                    User user = snapshot.getValue(User.class);
 
-
-
-                    assert user != null;
-                    if(!user.getId().equals(firebaseUser.getUid())){
-
-                        if (user.getLawyer_status().equals("lawyer"))
-                            mUsers.add(user);
-
-
-                    }
-                }
-
-
-                userAdapter = new UserAdapter(getContext(), mUsers, false);
-                recyclerView.setAdapter(userAdapter);
-
-
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-
-            }
-        });*/
 
     }
 

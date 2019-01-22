@@ -2,7 +2,6 @@ package com.android.jack.dictumfactum;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.graphics.PorterDuff;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.TabLayout;
@@ -15,13 +14,10 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.TableLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.android.jack.dictumfactum.Fragments.ChatsFragment;
 import com.android.jack.dictumfactum.Fragments.LawFragment;
-import com.android.jack.dictumfactum.Fragments.LawyerFragment;
 import com.android.jack.dictumfactum.Fragments.ProfileFragment;
 import com.android.jack.dictumfactum.Fragments.UsersFragment;
 import com.android.jack.dictumfactum.Model.User;
@@ -111,24 +107,7 @@ public class MainActivity extends AppCompatActivity {
 
 
             viewPagerAdapter.addFragment(new LawFragment(), "");
-
-
-               //   viewPagerAdapter.addFragment(new LawyerFragment(), "");
-
-                viewPagerAdapter.addFragment(new UsersFragment(), "");
-
-
-
-
-
-
-
-
-
-
-
-
-
+            viewPagerAdapter.addFragment(new UsersFragment(), "");
             viewPagerAdapter.addFragment(new ChatsFragment(), "");
             viewPagerAdapter.addFragment(new ProfileFragment(), "");
 

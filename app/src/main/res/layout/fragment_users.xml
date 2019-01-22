@@ -11,6 +11,9 @@
         android:paddingLeft="8dp"
         android:text="Список юристов"
         android:id="@+id/txt_title"/>
+
+
+
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recycler_view"
         android:layout_width="match_parent"
