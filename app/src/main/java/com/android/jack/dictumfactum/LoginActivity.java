@@ -9,6 +9,7 @@ import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.jack.dictumfactum.Model.User;
@@ -27,7 +28,7 @@ public class LoginActivity extends AppCompatActivity {
 
     FirebaseAuth auth;
 
-
+    TextView forgot_password;
 
 
     @Override
@@ -46,6 +47,15 @@ public class LoginActivity extends AppCompatActivity {
         email = findViewById(R.id.email);
         password = findViewById(R.id.password);
         btn_login = findViewById(R.id.btn_login);
+        forgot_password = findViewById(R.id.forgot_password);
+
+        forgot_password.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(LoginActivity.this, ResetPasswordActivity.class));
+            }
+        });
+
 
         btn_login.setOnClickListener(new View.OnClickListener() {
             @Override

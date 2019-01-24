@@ -2,9 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.android.jack.dictumfactum">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -28,23 +28,32 @@
         <activity
             android:name=".LoginActivity"
             android:parentActivityName=".StartActivity" />
-        <activity android:name=".MessageActivity"/>
-        <activity android:name=".FeeActivity"
-            android:parentActivityName=".MainActivity"/>
-        <activity android:name=".RawActivity"
-            android:parentActivityName=".MainActivity"/>
-        <activity android:name=".FamilyActivity"
-            android:parentActivityName=".MainActivity"/>
-        <activity android:name=".WorkActivity"
-            android:parentActivityName=".MainActivity"/>
-        <activity android:name=".PoliceActivity"
-            android:parentActivityName=".MainActivity"/>
-        <activity android:name=".BorderActivity"
-            android:parentActivityName=".MainActivity"/>
-        <activity android:name=".LandActivity"
-            android:parentActivityName=".MainActivity"/>
-        <activity android:name=".AdminActivity"
-            android:parentActivityName=".MainActivity"></activity>
+        <activity android:name=".MessageActivity" />
+        <activity
+            android:name=".FeeActivity"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".RawActivity"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".FamilyActivity"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".WorkActivity"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".PoliceActivity"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".BorderActivity"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".LandActivity"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".AdminActivity"
+            android:parentActivityName=".MainActivity" />
+        <activity android:name=".ResetPasswordActivity"></activity>
     </application>
 
 </manifest>

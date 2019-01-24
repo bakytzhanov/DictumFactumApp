@@ -50,6 +50,15 @@
             android:layout_marginTop="10dp"
             android:textColor="#FFF"/>
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Забыли пароль?"
+            android:layout_marginTop="10dp"
+            android:layout_gravity="end"
+            android:id="@+id/forgot_password" />
+
     </LinearLayout>
 
 
