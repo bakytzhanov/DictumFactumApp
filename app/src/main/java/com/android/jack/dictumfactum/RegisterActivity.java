@@ -79,9 +79,9 @@ public class RegisterActivity extends AppCompatActivity {
 
 
                 if (TextUtils.isEmpty(txt_username) || TextUtils.isEmpty(txt_email) || TextUtils.isEmpty(txt_password) || TextUtils.isEmpty(txt_lawyer_status)){
-                    Toast.makeText(RegisterActivity.this, "All fields are required", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(RegisterActivity.this, "Все поля обязательны для заполнения", Toast.LENGTH_SHORT).show();
                 }else if (txt_password.length()<6){
-                    Toast.makeText(RegisterActivity.this, "Password must be at least 6 characters", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(RegisterActivity.this, "Пароль должен состоять не менее чем из 6 символов", Toast.LENGTH_SHORT).show();
                 }else{
                     register(txt_username, txt_email, txt_password);
                 }
@@ -136,7 +136,7 @@ public class RegisterActivity extends AppCompatActivity {
 
 
                         }else {
-                            Toast.makeText(RegisterActivity.this, "You can't register with this email or password", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(RegisterActivity.this, "Вы не можете зарегистрироваться с данным email и паролем", Toast.LENGTH_SHORT).show();
                         }
                     }
                 });
