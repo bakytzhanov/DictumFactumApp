@@ -8,10 +8,14 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.MimeTypeMap;
+import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.MultiAutoCompleteTextView;
@@ -312,6 +316,33 @@ public class ProfileFragment extends Fragment {
     TextView t3;
     TextView t4;
 
+    EditText e2;
+
+    CheckBox ch1;
+    CheckBox ch2;
+    CheckBox ch3;
+    CheckBox ch4;
+    CheckBox ch5;
+    CheckBox ch6;
+    CheckBox ch7;
+    CheckBox ch8;
+
+    TextView textViewRed1;
+    TextView textViewRed2;
+    TextView textViewRed3;
+    TextView textViewRed4;
+    TextView textViewRed5;
+    TextView textViewRed6;
+    TextView textViewRed7;
+    TextView textViewRed8;
+
+
+    MultiAutoCompleteTextView simpleMultiAutoCompleteTextView;
+
+    Button btn_save_profile;
+
+    String txt_ch;
+
     DatabaseReference reference;
     FirebaseUser fuser;
 
@@ -335,10 +366,36 @@ public class ProfileFragment extends Fragment {
         t3 = view.findViewById(R.id.t3);
         t4 = view.findViewById(R.id.t4);
 
+        e2 = view.findViewById(R.id.e2);
+
+        ch1 = view.findViewById(R.id.ch1);
+        ch2 = view.findViewById(R.id.ch2);
+        ch3 = view.findViewById(R.id.ch3);
+        ch4 = view.findViewById(R.id.ch4);
+        ch5 = view.findViewById(R.id.ch5);
+        ch6 = view.findViewById(R.id.ch6);
+        ch7 = view.findViewById(R.id.ch7);
+        ch8 = view.findViewById(R.id.ch8);
+
+        textViewRed1 = view.findViewById(R.id.textViewRed1);
+        textViewRed2 = view.findViewById(R.id.textViewRed2);
+        textViewRed3 = view.findViewById(R.id.textViewRed3);
+        textViewRed4 = view.findViewById(R.id.textViewRed4);
+        textViewRed5 = view.findViewById(R.id.textViewRed5);
+        textViewRed6 = view.findViewById(R.id.textViewRed6);
+        textViewRed7 = view.findViewById(R.id.textViewRed7);
+        textViewRed8 = view.findViewById(R.id.textViewRed8);
+
+
+        simpleMultiAutoCompleteTextView = view.findViewById(R.id.simpleMultiAutoCompleteTextView);
+
+        btn_save_profile = view.findViewById(R.id.btn_save_profile);
+
+
 
 
         // initiate a MultiAutoCompleteTextView
-        MultiAutoCompleteTextView simpleMultiAutoCompleteTextView = (MultiAutoCompleteTextView) view.findViewById(R.id.simpleMultiAutoCompleteTextView);
+     //   MultiAutoCompleteTextView simpleMultiAutoCompleteTextView = (MultiAutoCompleteTextView) view.findViewById(R.id.simpleMultiAutoCompleteTextView);
 // set adapter to fill the data in suggestion list
         ArrayAdapter<String> versionNames = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, androidVersionNames);
         simpleMultiAutoCompleteTextView.setAdapter(versionNames);
@@ -387,7 +444,125 @@ public class ProfileFragment extends Fragment {
             }
         });
 
+        btn_save_profile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String txt_e2 = e2.getText().toString();
+                String txt_simpleMultiAutoCompleteTextView = simpleMultiAutoCompleteTextView.getText().toString();
 
+                String txt_ch1;
+                String txt_ch2;
+                String txt_ch3;
+                String txt_ch4;
+                String txt_ch5;
+                String txt_ch6;
+                String txt_ch7;
+                String txt_ch8;
+/*
+
+                if(ch1.isChecked() == true){
+                    txt_ch1 = textViewRed1.getText().toString();
+                }else if(ch1.isChecked() == false){
+                    txt_ch1 = "";
+                }else if(ch2.isChecked() == true){
+                    txt_ch2 = textViewRed2.getText().toString();
+                }else if(ch2.isChecked() == false){
+                    txt_ch2 = "";
+                }else if(ch3.isChecked() == true){
+                    txt_ch3 = textViewRed3.getText().toString();
+                }else if(ch3.isChecked() == false){
+                    txt_ch3 = "";
+                }else if(ch4.isChecked() == true){
+                    txt_ch4 = textViewRed4.getText().toString();
+                }else if(ch4.isChecked() == false){
+                    txt_ch4 = "";
+                }else if(ch5.isChecked() == true){
+                    txt_ch5 = textViewRed5.getText().toString();
+                }else if(ch5.isChecked() == false){
+                    txt_ch5 = "";
+                }else if(ch6.isChecked() == true){
+                    txt_ch6 = textViewRed6.getText().toString();
+                }else if(ch6.isChecked() == false){
+                    txt_ch6 = "";
+                }else if(ch7.isChecked() == true){
+                    txt_ch7 = textViewRed7.getText().toString();
+                }else if(ch7.isChecked() == false){
+                    txt_ch7 = "";
+                }else if(ch8.isChecked() == true){
+                    txt_ch8 = textViewRed8.getText().toString();
+                }else if(ch8.isChecked() == false){
+                    txt_ch8 = "";
+                }*/
+
+                if(ch1.isChecked()){
+                    txt_ch1 = textViewRed1.getText().toString();
+                }else{
+                    txt_ch1 = "";
+                    ch1.setChecked(false);
+                }
+                if(ch2.isChecked()){
+                    txt_ch2 = textViewRed2.getText().toString();
+                }else{
+                    txt_ch2 = "";
+                    ch2.setChecked(false);
+                }
+                if(ch3.isChecked()){
+                    txt_ch3 = textViewRed3.getText().toString();
+                }else{
+                    txt_ch3 = "";
+                    ch3.setChecked(false);
+                }
+                if(ch4.isChecked()){
+                    txt_ch4 = textViewRed4.getText().toString();
+                }else{
+                    txt_ch4 = "";
+                    ch4.setChecked(false);
+                }
+                if(ch5.isChecked()){
+                    txt_ch5 = textViewRed5.getText().toString();
+                }else{
+                    txt_ch5 = "";
+                    ch5.setChecked(false);
+                }
+                if(ch6.isChecked()){
+                    txt_ch6 = textViewRed6.getText().toString();
+                }else{
+                    txt_ch6 = "";
+                    ch6.setChecked(false);
+                }
+                if(ch7.isChecked()){
+                    txt_ch7 = textViewRed7.getText().toString();
+                }else{
+                    txt_ch7 = "";
+                    ch7.setChecked(false);
+                }
+                if(ch8.isChecked()){
+                    txt_ch8 = textViewRed8.getText().toString();
+                }else{
+                    txt_ch8 = "";
+                    ch8.setChecked(false);
+                }
+
+
+
+                    txt_ch = txt_ch1 + " " + txt_ch2 + " " + txt_ch3 + " " + txt_ch4 + " " + txt_ch5 + " " + txt_ch6 + " " + txt_ch7 + " " + txt_ch8;
+
+              //  Toast.makeText(getActivity(),txt_ch, Toast.LENGTH_SHORT).show();
+
+
+
+                reference = FirebaseDatabase.getInstance().getReference("Users").child(fuser.getUid());
+
+                HashMap<String, Object> hashMap = new HashMap<>();
+                hashMap.put("e2", txt_e2);
+                hashMap.put("ch", txt_ch);
+                hashMap.put("autoc", txt_simpleMultiAutoCompleteTextView);
+
+                reference.updateChildren(hashMap);
+
+
+            }
+        });
 
         image_profile.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -112,6 +112,9 @@ public class RegisterActivity extends AppCompatActivity {
                             hashMap.put("username", username);
                             hashMap.put("imageURL", "default");
                             hashMap.put("status", "offline");
+                            hashMap.put("e2", "Вопрос/о себе");
+                            hashMap.put("ch", "Сфера правоотношений");
+                            hashMap.put("autoc", "Область, город и тд");
 
 
                             if(txt_lawyer_status.equals("notlawyer")){
