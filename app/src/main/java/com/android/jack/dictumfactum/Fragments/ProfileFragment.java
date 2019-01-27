@@ -22,6 +22,7 @@ import android.widget.MultiAutoCompleteTextView;
 import android.widget.ArrayAdapter;
 
 import com.android.jack.dictumfactum.Model.User;
+import com.android.jack.dictumfactum.ProfileChangeActivity;
 import com.android.jack.dictumfactum.R;
 import com.bumptech.glide.Glide;
 import com.google.android.gms.tasks.Continuation;
@@ -50,265 +51,6 @@ import static android.app.Activity.RESULT_OK;
 public class ProfileFragment extends Fragment {
 
 
-    String[] androidVersionNames = {
-            "Айдабул",
-            "Акколь",
-            "Аксу",
-            "Алексеевка",
-            "Атбасар",
-            "Баймурза",
-            "Бурабай",
-            "Державинск",
-            "Ерейментау",
-            "Запорожье",
-            "Зеренда",
-            "Кабанбай Батыр",
-            "Кокшетау",
-            "Куйгенжар",
-            "Курское",
-            "Макинск",
-            "Максимовка",
-            "Малиновка",
-            "Новочеркаское",
-            "Степногорск",
-            "Талапкер",
-            "Шортанды",
-            "Щучинск",
-            "Актобе",
-            "Алга",
-            "Батамшинский",
-            "Кандыагаш",
-            "Каргалинское",
-            "Мартук",
-            "Хромтау",
-            "Шалкар",
-            "Шубаркудук",
-            "Эмба",
-            "Абай",
-            "Азат",
-            "Актерек",
-            "Алатау",
-            "Алгабас",
-            "Алгабас",
-            "Алдабергенов",
-            "Алмалыбак",
-            "Байсерке",
-            "Бахтыбай",
-            "Бесагаш",
-            "Боралдай",
-            "Булакты",
-            "Декабрь",
-            "Екпенды",
-            "Екпенды",
-            "Енбекши",
-            "Ерменсай",
-            "Есик",
-            "Жана-Арна",
-            "Жаркент",
-            "Кабанбай",
-            "Каменка",
-            "Капчагай",
-            "Карабулак",
-            "Каскелен",
-            "Кемиртоган",
-            "Кендала",
-            "Кербулак",
-            "Ключи",
-            "Косозен",
-            "Маловодное",
-            "Мамыр",
-            "Мерке",
-            "Мухаметжан Туймебаева",
-            "Отеген Батыр",
-            "Мерей",
-            "Ынтымак",
-            "Первомайка",
-            "Бастобе",
-            "Саймасай",
-            "Сарыозек",
-            "Талгар",
-            "Талдыкорган",
-            "Текели",
-            "Теректы",
-            "Туздыбастау",
-            "Узынагаш",
-            "Умбеталы",
-            "Ушарал",
-            "Ушконыр (Шамалган)",
-            "Уштобе",
-            "Фабричный",
-            "Чемолган",
-            "Чимбулак",
-            "Чунджа",
-            "Шелек",
-            "Шенгельды",
-            "Шынты",
-            "Алматы",
-            "Курылысши",
-            "Астана",
-            "Акколь",
-            "Атырау",
-            "Ганюшкино",
-            "Жаскайрат",
-            "Кульсары",
-            "Махамбет",
-            "Тенгиз",
-            "Асу-Булак",
-            "Атыбай",
-            "Аягоз",
-            "Глубоков",
-            "Зайсан",
-            "Зыряновск",
-            "Кабалтау",
-            "Курчатов",
-            "Маканчи",
-            "Новая согра",
-            "Ново-Хайрузовка",
-            "Первомайский",
-            "Риддер",
-            "Семей",
-            "Семипалатинск",
-            "Серебрянск",
-            "Солнечное",
-            "Теремшамка",
-            "Тугул",
-            "Усть-Каменогорск",
-            "Шар",
-            "Шемонаиха",
-            "Айша-Биби",
-            "Айша-Биби",
-            "Ерназар",
-            "Жанатас",
-            "Каратау",
-            "Кордай",
-            "Кулан",
-            "Мерке",
-            "Б.Момышулы",
-            "Степное",
-            "Тараз",
-            "Шу",
-            "Шынты",
-            "Аксай",
-            "Актау",
-            "Жангала",
-            "Зачаганск",
-            "Казталовка",
-            "Каменка",
-            "Переметное",
-            "Переметное",
-            "Сайхин",
-            "Тайпак",
-            "Трекино",
-            "Уральск",
-            "Федоровка",
-            "Абай",
-            "Агадырь",
-            "Актау",
-            "Балхаш",
-            "Дубовка",
-            "Жезды",
-            "Жезказган",
-            "Караганда",
-            "Каражал",
-            "Каркаралинск",
-            "Осакаровка",
-            "Сарань",
-            "Сатпаев",
-            "Темиртау",
-            "Топар",
-            "Шахтинск",
-            "Шашубай",
-            "Аманкарагай",
-            "Аркалык",
-            "Аулиеколь",
-            "Жалгыскан",
-            "Житикара",
-            "Затобольск",
-            "Камысты",
-            "Карабалык",
-            "Костанай",
-            "Кушмурун",
-            "Лисаковск",
-            "Приозёрный",
-            "Раздольный",
-            "Рудный",
-            "Садовое",
-            "Сарыколь",
-            "Силантьевка",
-            "Тарановское",
-            "Узунколь",
-            "Федоровка",
-            "Айтеке Би",
-            "Аральск",
-            "Жанакорган",
-            "Жосалы",
-            "Казалинск",
-            "Кызылорда",
-            "Макпалколь",
-            "Теренозек",
-            "Торебай Би",
-            "Шиели",
-            "Актау",
-            "Актобе",
-            "Бейнеу",
-            "Жанаозен",
-            "Умирзак",
-            "Форт-Шевченко",
-            "Шетпе",
-            "Акжар",
-            "Аксу",
-            "Актогай",
-            "Ефремовка",
-            "Калкаман",
-            "Коктобе",
-            "Майкаин",
-            "Павлодар",
-            "Шидерты",
-            "Экибастуз",
-            "Бишкуль",
-            "Булаево",
-            "Имантау",
-            "Ленинградское",
-            "Мамлютка",
-            "Новоишимское",
-            "Петропавловск",
-            "Саратов",
-            "Саумалколь",
-            "Тайынша",
-            "Аксукент",
-            "Арысь",
-            "Асык Ата",
-            "Атакент",
-            "Жетысай",
-            "Казыбек би",
-            "Кентау",
-            "Коктерек",
-            "Кызылсай",
-            "Ленгер",
-            "Ошакты",
-            "Шубар",
-            "Сайрам",
-            "Сарыагаш",
-            "Тайынша",
-            "Туркестан",
-            "Чилик",
-            "Шардара",
-            "Шымкент",
-            "Акмолинская область",
-            "Актюбинская область",
-            "Алматинская область",
-            "Атырауская область",
-            "Восточно-Казахстанская область",
-            "Жамбылская область",
-            "Западно-Казахстанская область",
-            "Карагандинская область",
-            "Костанайская область",
-            "Туркестанская область",
-            "Кызылординская область",
-            "Мангистауская область",
-            "Павлодарская область",
-            "Северо-Казахстанская область",
-            "Южно-Казахстанская область"};
 
     CircleImageView image_profile;
     TextView username;
@@ -316,32 +58,12 @@ public class ProfileFragment extends Fragment {
     TextView t3;
     TextView t4;
 
-    EditText e2;
-
-    CheckBox ch1;
-    CheckBox ch2;
-    CheckBox ch3;
-    CheckBox ch4;
-    CheckBox ch5;
-    CheckBox ch6;
-    CheckBox ch7;
-    CheckBox ch8;
-
-    TextView textViewRed1;
-    TextView textViewRed2;
-    TextView textViewRed3;
-    TextView textViewRed4;
-    TextView textViewRed5;
-    TextView textViewRed6;
-    TextView textViewRed7;
-    TextView textViewRed8;
+    TextView txt_o;
+    TextView txt_r;
+    TextView txt_p;
+    Button btn_change_profile;
 
 
-    MultiAutoCompleteTextView simpleMultiAutoCompleteTextView;
-
-    Button btn_save_profile;
-
-    String txt_ch;
 
     DatabaseReference reference;
     FirebaseUser fuser;
@@ -366,44 +88,22 @@ public class ProfileFragment extends Fragment {
         t3 = view.findViewById(R.id.t3);
         t4 = view.findViewById(R.id.t4);
 
-        e2 = view.findViewById(R.id.e2);
-
-        ch1 = view.findViewById(R.id.ch1);
-        ch2 = view.findViewById(R.id.ch2);
-        ch3 = view.findViewById(R.id.ch3);
-        ch4 = view.findViewById(R.id.ch4);
-        ch5 = view.findViewById(R.id.ch5);
-        ch6 = view.findViewById(R.id.ch6);
-        ch7 = view.findViewById(R.id.ch7);
-        ch8 = view.findViewById(R.id.ch8);
-
-        textViewRed1 = view.findViewById(R.id.textViewRed1);
-        textViewRed2 = view.findViewById(R.id.textViewRed2);
-        textViewRed3 = view.findViewById(R.id.textViewRed3);
-        textViewRed4 = view.findViewById(R.id.textViewRed4);
-        textViewRed5 = view.findViewById(R.id.textViewRed5);
-        textViewRed6 = view.findViewById(R.id.textViewRed6);
-        textViewRed7 = view.findViewById(R.id.textViewRed7);
-        textViewRed8 = view.findViewById(R.id.textViewRed8);
+        txt_o = view.findViewById(R.id.txt_o);
+        txt_r = view.findViewById(R.id.txt_r);
+        txt_p = view.findViewById(R.id.txt_p);
 
 
-        simpleMultiAutoCompleteTextView = view.findViewById(R.id.simpleMultiAutoCompleteTextView);
+        btn_change_profile = view.findViewById(R.id.btn_change_profile);
 
-        btn_save_profile = view.findViewById(R.id.btn_save_profile);
+        btn_change_profile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getActivity(), ProfileChangeActivity.class));
+
+            }
+        });
 
 
-
-
-        // initiate a MultiAutoCompleteTextView
-     //   MultiAutoCompleteTextView simpleMultiAutoCompleteTextView = (MultiAutoCompleteTextView) view.findViewById(R.id.simpleMultiAutoCompleteTextView);
-// set adapter to fill the data in suggestion list
-        ArrayAdapter<String> versionNames = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, androidVersionNames);
-        simpleMultiAutoCompleteTextView.setAdapter(versionNames);
-
-// set threshold value 1 that help us to start the searching from first character
-        simpleMultiAutoCompleteTextView.setThreshold(1);
-// set tokenizer that distinguish the various substrings by comma
-        simpleMultiAutoCompleteTextView.setTokenizer(new MultiAutoCompleteTextView.CommaTokenizer());
 
 
 
@@ -436,6 +136,10 @@ public class ProfileFragment extends Fragment {
                     t3.setText("Выберите интересующую вас область:");
                     t4.setText("Место (область, город где необходима помощь):");
                 }
+
+                txt_o.setText(user.getE2());
+                txt_r.setText(user.getCh());
+                txt_p.setText(user.getAutoc());
             }
 
             @Override
@@ -444,125 +148,7 @@ public class ProfileFragment extends Fragment {
             }
         });
 
-        btn_save_profile.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String txt_e2 = e2.getText().toString();
-                String txt_simpleMultiAutoCompleteTextView = simpleMultiAutoCompleteTextView.getText().toString();
 
-                String txt_ch1;
-                String txt_ch2;
-                String txt_ch3;
-                String txt_ch4;
-                String txt_ch5;
-                String txt_ch6;
-                String txt_ch7;
-                String txt_ch8;
-/*
-
-                if(ch1.isChecked() == true){
-                    txt_ch1 = textViewRed1.getText().toString();
-                }else if(ch1.isChecked() == false){
-                    txt_ch1 = "";
-                }else if(ch2.isChecked() == true){
-                    txt_ch2 = textViewRed2.getText().toString();
-                }else if(ch2.isChecked() == false){
-                    txt_ch2 = "";
-                }else if(ch3.isChecked() == true){
-                    txt_ch3 = textViewRed3.getText().toString();
-                }else if(ch3.isChecked() == false){
-                    txt_ch3 = "";
-                }else if(ch4.isChecked() == true){
-                    txt_ch4 = textViewRed4.getText().toString();
-                }else if(ch4.isChecked() == false){
-                    txt_ch4 = "";
-                }else if(ch5.isChecked() == true){
-                    txt_ch5 = textViewRed5.getText().toString();
-                }else if(ch5.isChecked() == false){
-                    txt_ch5 = "";
-                }else if(ch6.isChecked() == true){
-                    txt_ch6 = textViewRed6.getText().toString();
-                }else if(ch6.isChecked() == false){
-                    txt_ch6 = "";
-                }else if(ch7.isChecked() == true){
-                    txt_ch7 = textViewRed7.getText().toString();
-                }else if(ch7.isChecked() == false){
-                    txt_ch7 = "";
-                }else if(ch8.isChecked() == true){
-                    txt_ch8 = textViewRed8.getText().toString();
-                }else if(ch8.isChecked() == false){
-                    txt_ch8 = "";
-                }*/
-
-                if(ch1.isChecked()){
-                    txt_ch1 = textViewRed1.getText().toString();
-                }else{
-                    txt_ch1 = "";
-                    ch1.setChecked(false);
-                }
-                if(ch2.isChecked()){
-                    txt_ch2 = textViewRed2.getText().toString();
-                }else{
-                    txt_ch2 = "";
-                    ch2.setChecked(false);
-                }
-                if(ch3.isChecked()){
-                    txt_ch3 = textViewRed3.getText().toString();
-                }else{
-                    txt_ch3 = "";
-                    ch3.setChecked(false);
-                }
-                if(ch4.isChecked()){
-                    txt_ch4 = textViewRed4.getText().toString();
-                }else{
-                    txt_ch4 = "";
-                    ch4.setChecked(false);
-                }
-                if(ch5.isChecked()){
-                    txt_ch5 = textViewRed5.getText().toString();
-                }else{
-                    txt_ch5 = "";
-                    ch5.setChecked(false);
-                }
-                if(ch6.isChecked()){
-                    txt_ch6 = textViewRed6.getText().toString();
-                }else{
-                    txt_ch6 = "";
-                    ch6.setChecked(false);
-                }
-                if(ch7.isChecked()){
-                    txt_ch7 = textViewRed7.getText().toString();
-                }else{
-                    txt_ch7 = "";
-                    ch7.setChecked(false);
-                }
-                if(ch8.isChecked()){
-                    txt_ch8 = textViewRed8.getText().toString();
-                }else{
-                    txt_ch8 = "";
-                    ch8.setChecked(false);
-                }
-
-
-
-                    txt_ch = txt_ch1 + " " + txt_ch2 + " " + txt_ch3 + " " + txt_ch4 + " " + txt_ch5 + " " + txt_ch6 + " " + txt_ch7 + " " + txt_ch8;
-
-              //  Toast.makeText(getActivity(),txt_ch, Toast.LENGTH_SHORT).show();
-
-
-
-                reference = FirebaseDatabase.getInstance().getReference("Users").child(fuser.getUid());
-
-                HashMap<String, Object> hashMap = new HashMap<>();
-                hashMap.put("e2", txt_e2);
-                hashMap.put("ch", txt_ch);
-                hashMap.put("autoc", txt_simpleMultiAutoCompleteTextView);
-
-                reference.updateChildren(hashMap);
-
-
-            }
-        });
 
         image_profile.setOnClickListener(new View.OnClickListener() {
             @Override
