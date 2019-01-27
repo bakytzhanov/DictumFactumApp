@@ -39,6 +39,8 @@
                         android:textSize="15sp"
                         android:paddingLeft="8dp"
                         android:text="DictumFactum"
+                        android:textStyle="bold"
+
                         android:id="@+id/t2"/>
 
                     <EditText
@@ -77,6 +79,8 @@
                         android:textSize="15sp"
                         android:paddingLeft="8dp"
                         android:text="DictumFactum"
+                        android:textStyle="bold"
+
                         android:id="@+id/t3"/>
                     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
                         android:layout_width="match_parent"
@@ -303,6 +307,8 @@
                         android:textSize="15sp"
                         android:paddingLeft="8dp"
                         android:text="DictumFactum"
+                        android:textStyle="bold"
+
                         android:id="@+id/t4"/>
 
                     <MultiAutoCompleteTextView

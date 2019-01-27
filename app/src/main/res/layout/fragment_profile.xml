@@ -78,6 +78,7 @@
                 android:textSize="15sp"
                 android:paddingLeft="8dp"
                 android:text="DictumFactum"
+                android:textStyle="bold"
                 android:id="@+id/t2"/>
 
 
@@ -114,6 +115,8 @@
                 android:layout_height="wrap_content"
                 android:textSize="15sp"
                 android:paddingLeft="8dp"
+                android:textStyle="bold"
+
                 android:text="DictumFactum"
                 android:id="@+id/t3"/>
 
@@ -151,6 +154,8 @@
                     android:textSize="15sp"
                     android:paddingLeft="8dp"
                     android:text="DictumFactum"
+                    android:textStyle="bold"
+
                     android:id="@+id/t4"/>
 <TextView
     android:layout_width="wrap_content"

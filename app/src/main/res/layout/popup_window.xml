@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="8dp"
+    android:layout_margin="30dp"
+
+    tools:context=".Fragments.ProfileFragment"
+    android:background="#afa9a9"
+    >
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp">
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="15sp"
+                        android:paddingLeft="8dp"
+                        android:text="Информация:"
+                        android:textStyle="bold"
+                        android:textColor="#ffffff"
+                        android:id="@+id/t2"/>
+
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Не задано"
+                        android:id="@+id/txt_o"
+                        android:layout_below="@id/t2"
+                        android:layout_marginTop="10dp"
+                        android:textColor="#ffffff"
+                        />
+
+
+
+                </RelativeLayout>
+
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp">
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="15sp"
+                        android:paddingLeft="8dp"
+                        android:text="Интересующая сфера правоотношений:"
+                        android:textStyle="bold"
+                        android:textColor="#ffffff"
+
+                        android:id="@+id/t3"/>
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Не задано"
+                        android:id="@+id/txt_r"
+                        android:layout_below="@id/t3"
+                        android:textColor="#ffffff"
+
+                        android:layout_marginTop="10dp"/>
+
+
+
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp">
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="15sp"
+                        android:paddingLeft="8dp"
+                        android:textColor="#ffffff"
+
+                        android:text="Местоположение:"
+                        android:textStyle="bold"
+
+                        android:id="@+id/t4"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Не задано"
+                        android:textColor="#ffffff"
+
+                        android:id="@+id/txt_p"
+                        android:layout_below="@id/t4"
+                        android:layout_marginTop="10dp"/>
+
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/btn_cl"
+                        android:layout_below="@id/txt_p"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginTop="30dp"
+                        android:text="Закрыть"/>
+
+
+                </RelativeLayout>
+
+
+
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

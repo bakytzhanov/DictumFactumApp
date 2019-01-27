@@ -7,11 +7,17 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.MenuItem;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Adapter;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.LinearLayout;
+import android.widget.PopupWindow;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -124,6 +130,64 @@ public class MessageActivity extends AppCompatActivity {
                 }
 
                 readMessages(fuser.getUid(), userid, user.getImageURL());
+
+
+                final String a = user.getE2();
+                final String b = user.getCh();
+                final String c = user.getAutoc();
+                username.setOnTouchListener(new View.OnTouchListener() {
+                    @Override
+                    public boolean onTouch(View view, MotionEvent motionEvent) {
+                        // inflate the layout of the popup window
+                        LayoutInflater inflater = (LayoutInflater)
+                                getSystemService(LAYOUT_INFLATER_SERVICE);
+                        final View popupView = inflater.inflate(R.layout.popup_window, null);
+
+                        Button btn_cl = popupView.findViewById(R.id.btn_cl);
+                        TextView txt_o = popupView.findViewById(R.id.txt_o);
+                        TextView txt_r = popupView.findViewById(R.id.txt_r);
+                        TextView txt_p = popupView.findViewById(R.id.txt_p);
+
+                        txt_o.setText(a);
+                        txt_r.setText(b);
+                        txt_p.setText(c);
+
+                        // create the popup window
+                        int width = LinearLayout.LayoutParams.WRAP_CONTENT;
+                        int height = LinearLayout.LayoutParams.WRAP_CONTENT;
+
+                        boolean focusable = true; // lets taps outside the popup also dismiss it
+                        final PopupWindow popupWindow = new PopupWindow(popupView, width, height, focusable);
+                        popupWindow.setOutsideTouchable(true);
+
+
+                        // show the popup window
+                        // which view you pass in doesn't matter, it is only used for the window tolken
+                        popupWindow.showAtLocation(view, Gravity.CENTER, 0, 0);
+                        btn_cl.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+
+                                popupWindow.dismiss();
+
+
+                            }
+                        });
+                        // dismiss the popup window when touched
+                        popupView.setOnTouchListener(new View.OnTouchListener() {
+                            @Override
+                            public boolean onTouch(View v, MotionEvent event) {
+                                if (event.getAction() == MotionEvent.ACTION_DOWN) {
+                                    popupWindow.dismiss();
+                                    return true;
+                                }
+                                return false;
+                            }
+                        });
+
+                        return true;
+                    }
+                });
             }
 
             @Override
