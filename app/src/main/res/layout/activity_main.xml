@@ -31,6 +31,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/username"
+            android:lines="1"
+            android:maxLines="1"
             android:textSize="18sp"
 
             android:layout_marginLeft="25dp"

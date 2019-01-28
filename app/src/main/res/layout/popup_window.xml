@@ -20,7 +20,37 @@
 
 
 
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="8dp">
 
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:paddingLeft="8dp"
+                    android:text="ФИО:"
+                    android:textStyle="bold"
+                    android:textColor="#ffffff"
+                    android:id="@+id/t1"/>
+
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ФИО"
+                    android:id="@+id/txt_fio"
+                    android:layout_below="@id/t1"
+                    android:layout_marginTop="10dp"
+                    android:textColor="#ffffff"
+                    />
+
+
+
+            </RelativeLayout>
 
                 <RelativeLayout
                     android:layout_width="match_parent"
@@ -116,14 +146,6 @@
                         android:layout_below="@id/t4"
                         android:layout_marginTop="10dp"/>
 
-                    <Button
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/btn_cl"
-                        android:layout_below="@id/txt_p"
-                        android:layout_alignParentRight="true"
-                        android:layout_marginTop="30dp"
-                        android:text="Закрыть"/>
 
 
                 </RelativeLayout>

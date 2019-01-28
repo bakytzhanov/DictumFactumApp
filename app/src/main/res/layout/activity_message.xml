@@ -35,8 +35,12 @@
                 android:layout_marginLeft="25dp"
 
                 android:textColor="#ffffff"
+                android:gravity="center_vertical"
+                android:layout_marginStart="25dp"
+                android:lines="1"
+                android:maxLines="1"
+                android:drawableRight="@drawable/l_p"/>
 
-                android:layout_marginStart="25dp"/>
 
 
         </android.support.v7.widget.Toolbar>

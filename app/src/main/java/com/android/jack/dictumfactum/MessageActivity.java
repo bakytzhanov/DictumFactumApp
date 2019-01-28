@@ -48,7 +48,7 @@ public class MessageActivity extends AppCompatActivity {
     FirebaseUser fuser;
     DatabaseReference reference;
 
-
+ImageButton l_p;
     ImageButton btn_send;
     EditText text_send;
 
@@ -135,18 +135,24 @@ public class MessageActivity extends AppCompatActivity {
                 final String a = user.getE2();
                 final String b = user.getCh();
                 final String c = user.getAutoc();
-                username.setOnTouchListener(new View.OnTouchListener() {
+                final String d = user.getUsername();
+
+                username.setOnClickListener(new View.OnClickListener() {
                     @Override
-                    public boolean onTouch(View view, MotionEvent motionEvent) {
+                    public void onClick(View view) {
                         // inflate the layout of the popup window
                         LayoutInflater inflater = (LayoutInflater)
                                 getSystemService(LAYOUT_INFLATER_SERVICE);
                         final View popupView = inflater.inflate(R.layout.popup_window, null);
 
-                        Button btn_cl = popupView.findViewById(R.id.btn_cl);
+                      //  Button btn_cl = popupView.findViewById(R.id.btn_cl);
+                        TextView txt_fio = popupView.findViewById(R.id.txt_fio);
+
                         TextView txt_o = popupView.findViewById(R.id.txt_o);
                         TextView txt_r = popupView.findViewById(R.id.txt_r);
                         TextView txt_p = popupView.findViewById(R.id.txt_p);
+
+                        txt_fio.setText(d);
 
                         txt_o.setText(a);
                         txt_r.setText(b);
@@ -164,7 +170,7 @@ public class MessageActivity extends AppCompatActivity {
                         // show the popup window
                         // which view you pass in doesn't matter, it is only used for the window tolken
                         popupWindow.showAtLocation(view, Gravity.CENTER, 0, 0);
-                        btn_cl.setOnClickListener(new View.OnClickListener() {
+                      /*  btn_cl.setOnClickListener(new View.OnClickListener() {
                             @Override
                             public void onClick(View view) {
 
@@ -172,7 +178,7 @@ public class MessageActivity extends AppCompatActivity {
 
 
                             }
-                        });
+                        });*/
                         // dismiss the popup window when touched
                         popupView.setOnTouchListener(new View.OnTouchListener() {
                             @Override
@@ -185,9 +191,15 @@ public class MessageActivity extends AppCompatActivity {
                             }
                         });
 
-                        return true;
+
                     }
                 });
+              /*  username.setOnTouchListener(new View.OnTouchListener() {
+                    @Override
+                    public boolean onTouch(View view, MotionEvent motionEvent) {
+                        return true;
+                    }
+                });*/
             }
 
             @Override
