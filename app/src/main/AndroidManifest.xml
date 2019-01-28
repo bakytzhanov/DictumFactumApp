@@ -56,8 +56,11 @@
         <activity
             android:name=".ResetPasswordActivity"
             android:parentActivityName=".LoginActivity" />
-        <activity android:name=".ProfileChangeActivity"
-            android:parentActivityName=".MainActivity"></activity>
+        <activity
+            android:name=".ProfileChangeActivity"
+            android:parentActivityName=".MainActivity" />
+        <activity android:name=".IntroActivity"
+            android:theme="@style/Theme.Intro"></activity>
     </application>
 
 </manifest>
