@@ -14,7 +14,9 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.android.jack.dictumfactum.Fragments.ChatsFragment;
 import com.android.jack.dictumfactum.Fragments.LawFragment;
@@ -22,6 +24,7 @@ import com.android.jack.dictumfactum.Fragments.ProfileFragment;
 import com.android.jack.dictumfactum.Fragments.UsersFragment;
 import com.android.jack.dictumfactum.Model.User;
 import com.bumptech.glide.Glide;
+import com.github.florent37.tutoshowcase.TutoShowcase;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -124,6 +127,13 @@ public class MainActivity extends AppCompatActivity {
             tabLayout.getTabAt(2).setIcon(tabIcons[2]);
             tabLayout.getTabAt(3).setIcon(tabIcons[3]);
 
+      /*  findViewById(R.id.profile_image).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                displayTuto();
+            }
+        });*/
+
     }
 
 
@@ -209,5 +219,33 @@ public class MainActivity extends AppCompatActivity {
         super.onPause();
         status("offline");
     }
+
+
+
+
+ /*   protected void displayTuto() {
+        TutoShowcase.from(this)
+                .setListener(new TutoShowcase.Listener() {
+                    @Override
+                    public void onDismissed() {
+                        Toast.makeText(MainActivity.this, "Tutorial dismissed", Toast.LENGTH_SHORT).show();
+                    }
+                })
+                .setContentView(R.layout.tuto_showcase_tuto_sample)
+                .setFitsSystemWindows(true)
+                .on(R.id.tab_layout)
+                .addCircle()
+                .withBorder()
+                .onClick(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+
+                    }
+                })
+        .showOnce("1")
+                .show();
+    }*/
+
+
 
     }
