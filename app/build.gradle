@@ -40,6 +40,7 @@ dependencies {
 
     implementation 'com.github.florent37:tutoshowcase:1.0.1'
     implementation 'agency.tango.android:material-intro-screen:0.0.5'
+    implementation 'com.alespero:expandable-cardview:0.8'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'

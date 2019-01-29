@@ -1,60 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".FeeActivity">
-
-
-    <include
-        android:id="@+id/toolbar"
-        layout="@layout/bar_layout" />
-
 <ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_below="@id/toolbar">
-
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
-    <com.alespero.expandablecardview.ExpandableCardView
-        android:id="@+id/definition"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:title="Понятия, определения, термины"
-        app:icon="@drawable/ic_def"
-        app:inner_view="@layout/mycustomview1"
-        app:expandOnClick="true"
-        app:animationDuration="300"
-        app:startExpanded="false" />
-
-    <com.alespero.expandablecardview.ExpandableCardView
-        android:id="@+id/advices"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:title="Полезные советы"
-        app:icon="@drawable/ic_ad"
-        app:inner_view="@layout/mycustomview2"
-        app:expandOnClick="true"
-        app:animationDuration="300"
-        app:startExpanded="false"
-        android:layout_below="@id/definition"/>
-
-    <com.alespero.expandablecardview.ExpandableCardView
-        android:id="@+id/questions"
-        android:layout_below="@id/advices"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:title="Часто задаваемые вопросы"
-        app:icon="@drawable/ic_qu"
-        app:inner_view="@layout/mycustomview3"
-        app:expandOnClick="true"
-        app:animationDuration="300"
-        app:startExpanded="false"/>
-
+    android:minHeight="1200dp">
 
     <TextView
         android:layout_width="wrap_content"
@@ -70,7 +19,4 @@ Suspendisse eleifend ultricies luctus. Nullam rutrum turpis at erat tempus, vel 
 
 Aenean sit amet nisi quis lorem faucibus eleifend a eget orci. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Cras eget pharetra risus. Donec eleifend posuere lacus, vel tincidunt augue. Sed malesuada nec turpis euismod rhoncus. Quisque in pulvinar massa, id dictum risus. Nam id mattis sapien. Pellentesque et mi quis lorem rutrum ultricies quis et arcu. Curabitur ac sapien volutpat, consequat risus sit amet, laoreet velit. Sed rutrum, nulla dapibus porttitor pellentesque, nisl felis laoreet massa, non accumsan arcu justo at lacus. In nulla massa, vestibulum vitae urna at, efficitur suscipit augue. "/>
 
-
-</LinearLayout>
 </ScrollView>
-</RelativeLayout>
