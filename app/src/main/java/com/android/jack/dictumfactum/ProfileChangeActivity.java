@@ -418,6 +418,16 @@ public class ProfileChangeActivity extends AppCompatActivity {
                 String txt_ch6;
                 String txt_ch7;
                 String txt_ch8;
+
+
+                Boolean cch1;
+                Boolean cch2;
+                Boolean cch3;
+                Boolean cch4;
+                Boolean cch5;
+                Boolean cch6;
+                Boolean cch7;
+                Boolean cch8;
 /*
 
                 if(ch1.isChecked() == true){
@@ -456,50 +466,66 @@ public class ProfileChangeActivity extends AppCompatActivity {
 
                 if(ch1.isChecked()){
                     txt_ch1 = textViewRed1.getText().toString();
+                    cch1 = true;
                 }else{
                     txt_ch1 = "";
+                    cch1 = false;
                     ch1.setChecked(false);
                 }
                 if(ch2.isChecked()){
                     txt_ch2 = textViewRed2.getText().toString();
+                    cch2 = true;
                 }else{
                     txt_ch2 = "";
+                    cch2 = false;
                     ch2.setChecked(false);
                 }
                 if(ch3.isChecked()){
                     txt_ch3 = textViewRed3.getText().toString();
+                    cch3 = true;
                 }else{
                     txt_ch3 = "";
+                    cch3 = false;
                     ch3.setChecked(false);
                 }
                 if(ch4.isChecked()){
                     txt_ch4 = textViewRed4.getText().toString();
+                    cch4 = true;
                 }else{
                     txt_ch4 = "";
+                    cch4 = false;
                     ch4.setChecked(false);
                 }
                 if(ch5.isChecked()){
                     txt_ch5 = textViewRed5.getText().toString();
+                    cch5 = true;
                 }else{
                     txt_ch5 = "";
+                    cch5 = false;
                     ch5.setChecked(false);
                 }
                 if(ch6.isChecked()){
                     txt_ch6 = textViewRed6.getText().toString();
+                    cch6 = true;
                 }else{
                     txt_ch6 = "";
+                    cch6 = false;
                     ch6.setChecked(false);
                 }
                 if(ch7.isChecked()){
                     txt_ch7 = textViewRed7.getText().toString();
+                    cch7 = true;
                 }else{
                     txt_ch7 = "";
+                    cch7 = false;
                     ch7.setChecked(false);
                 }
                 if(ch8.isChecked()){
                     txt_ch8 = textViewRed8.getText().toString();
+                    cch8 = true;
                 }else{
                     txt_ch8 = "";
+                    cch8 = false;
                     ch8.setChecked(false);
                 }
 
@@ -516,6 +542,14 @@ public class ProfileChangeActivity extends AppCompatActivity {
                 HashMap<String, Object> hashMap = new HashMap<>();
                 hashMap.put("e2", txt_e2);
                 hashMap.put("ch", txt_ch);
+                hashMap.put("cch1", cch1);
+                hashMap.put("cch2", cch2);
+                hashMap.put("cch3", cch3);
+                hashMap.put("cch4", cch4);
+                hashMap.put("cch5", cch5);
+                hashMap.put("cch6", cch6);
+                hashMap.put("cch7", cch7);
+                hashMap.put("cch8", cch8);
                 hashMap.put("autoc", txt_simpleMultiAutoCompleteTextView);
 
                 reference.updateChildren(hashMap);

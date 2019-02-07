@@ -126,7 +126,7 @@
 
                 android:layout_height="192dp"
                 android:layout_column="1"
-                android:drawableTop="@drawable/work"
+                android:drawableTop="@drawable/admin"
                 android:lines="2"
                 android:text="Административные правоотношения"
                 android:textAlignment="center"

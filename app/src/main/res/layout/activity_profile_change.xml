@@ -50,7 +50,8 @@
                         android:padding="8dp"
                         android:lines="7"
                         android:textSize="15dp"
-                        android:id="@+id/e2"/>
+                        android:id="@+id/e2"
+                        android:gravity="top|left"/>
 
 
 
@@ -317,7 +318,7 @@
                         android:id="@+id/simpleMultiAutoCompleteTextView"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:gravity="center"
+                        android:gravity="top|left"
                         android:hint="Введите название"
                         android:padding="10dp"
                         android:textColor="#000000"
@@ -338,7 +339,7 @@
                     android:id="@+id/btn_save_profile"
                     android:padding="8dp"
                     android:text="Сохранить"
-                    android:background="#162541"
+                    android:background="#203141"
                     android:textColor="#ffffff"/>
             </android.support.v7.widget.CardView>
 

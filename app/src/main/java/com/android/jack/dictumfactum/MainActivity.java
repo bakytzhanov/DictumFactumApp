@@ -20,6 +20,7 @@ import android.widget.Toast;
 
 import com.android.jack.dictumfactum.Fragments.ChatsFragment;
 import com.android.jack.dictumfactum.Fragments.LawFragment;
+import com.android.jack.dictumfactum.Fragments.NewsFragment;
 import com.android.jack.dictumfactum.Fragments.ProfileFragment;
 import com.android.jack.dictumfactum.Fragments.UsersFragment;
 import com.android.jack.dictumfactum.Model.User;
@@ -49,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
 
     private int[] tabIcons = {
             R.drawable.law,
-            R.drawable.lawyers,
+            R.drawable.news,
             R.drawable.message,
             R.drawable.user
     };
@@ -123,7 +124,9 @@ public class MainActivity extends AppCompatActivity {
 
 
             viewPagerAdapter.addFragment(new LawFragment(), "");
-            viewPagerAdapter.addFragment(new UsersFragment(), "");
+            viewPagerAdapter.addFragment(new NewsFragment(), "");
+
+        //  viewPagerAdapter.addFragment(new UsersFragment(), "");
             viewPagerAdapter.addFragment(new ChatsFragment(), "");
             viewPagerAdapter.addFragment(new ProfileFragment(), "");
 

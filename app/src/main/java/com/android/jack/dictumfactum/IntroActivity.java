@@ -29,8 +29,8 @@ public class IntroActivity extends MaterialIntroActivity {
                 .backgroundColor(R.color.color2)
                 .buttonsColor(R.color.btncolor)
                 .image(com.android.jack.dictumfactum.R.drawable.sh_users)
-                .title("Раздел Списки")
-                .description("Позволит Вам выбрать необходимого юриста/пользователя, а также ознакомиться с информацией о нём.")
+                .title("Раздел Новостная лента")
+                .description("Позволит Вам просматривать актуальную информацию о той или иной сфере правоотношений.")
                 .build()
         );
 

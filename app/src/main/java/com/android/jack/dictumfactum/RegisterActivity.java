@@ -107,13 +107,21 @@ public class RegisterActivity extends AppCompatActivity {
                             reference = FirebaseDatabase.getInstance().getReference("Users").child(userid);
 
 
-                            HashMap<String, String> hashMap = new HashMap<>();
+                            HashMap<String, Object> hashMap = new HashMap<>();
                             hashMap.put("id", userid);
                             hashMap.put("username", username);
                             hashMap.put("imageURL", "default");
                             hashMap.put("status", "offline");
                             hashMap.put("e2", "Вопрос/о себе");
                             hashMap.put("ch", "Сфера правоотношений");
+                            hashMap.put("cch1", false);
+                            hashMap.put("cch2", false);
+                            hashMap.put("cch3", false);
+                            hashMap.put("cch4", false);
+                            hashMap.put("cch5", false);
+                            hashMap.put("cch6", false);
+                            hashMap.put("cch7", false);
+                            hashMap.put("cch8", false);
                             hashMap.put("autoc", "Область, город и тд");
 
 

@@ -18,7 +18,7 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#162541"
+            android:background="#203141"
             android:theme="@style/Base.ThemeOverlay.AppCompat.Dark.ActionBar"
             app:popupTheme="@style/MenuStyle">
 
@@ -29,11 +29,11 @@
                 android:id="@+id/profile_image"/>
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/username"
                 android:layout_marginLeft="25dp"
-
+android:paddingRight="15dp"
                 android:textColor="#ffffff"
                 android:gravity="center_vertical"
                 android:layout_marginStart="25dp"

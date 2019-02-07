@@ -94,7 +94,7 @@
                                 <PersistentState>
                                   <option name="values">
                                     <map>
-                                      <entry key="url" value="jar:file:/C:/android/AndroidStudio/plugins/android/lib/android.jar!/images/material_design_icons/action/ic_info_outline_black_24dp.xml" />
+                                      <entry key="url" value="jar:file:/C:/android/AndroidStudio/plugins/android/lib/android.jar!/images/material_design_icons/maps/ic_person_pin_black_24dp.xml" />
                                     </map>
                                   </option>
                                 </PersistentState>
@@ -105,8 +105,11 @@
                         <option name="values">
                           <map>
                             <entry key="color" value="ffffff" />
-                            <entry key="outputName" value="l_p" />
-                            <entry key="sourceFile" value="C:\Users\Татьяна" />
+                            <entry key="height" value="72" />
+                            <entry key="outputName" value="user" />
+                            <entry key="overrideSize" value="true" />
+                            <entry key="sourceFile" value="C:\Users\Татьяна\Desktop\work\dictum factum\dictum factum\coin-stack.svg" />
+                            <entry key="width" value="72" />
                           </map>
                         </option>
                       </PersistentState>

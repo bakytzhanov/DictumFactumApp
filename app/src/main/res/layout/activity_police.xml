@@ -17,16 +17,6 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
-            <com.alespero.expandablecardview.ExpandableCardView
-                android:id="@+id/definition"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:title="Понятия, определения, термины"
-                app:icon="@drawable/ic_def"
-                app:inner_view="@layout/mycustomview1"
-                app:expandOnClick="true"
-                app:animationDuration="300"
-                app:startExpanded="false" />
 
             <com.alespero.expandablecardview.ExpandableCardView
                 android:id="@+id/advices"
@@ -37,8 +27,7 @@
                 app:inner_view="@layout/mycustomview2"
                 app:expandOnClick="true"
                 app:animationDuration="300"
-                app:startExpanded="false"
-                android:layout_below="@id/definition"/>
+                app:startExpanded="false"/>
 
             <com.alespero.expandablecardview.ExpandableCardView
                 android:id="@+id/questions"
@@ -52,22 +41,21 @@
                 app:animationDuration="300"
                 app:startExpanded="false"/>
 
-
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_below="@id/questions"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="25dp"
-                android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ut condimentum dui, ut faucibus neque. Quisque convallis tempus nisi, porttitor suscipit ex maximus nec. Fusce ut maximus tellus. Quisque augue diam, finibus sit amet aliquam quis, pharetra vitae sapien. Mauris ullamcorper tincidunt porttitor. Aliquam molestie lacinia mi. Mauris vestibulum est metus, eget tempor mi congue in. Morbi eget quam dignissim, porta tellus vel, mollis sem.
+                android:textSize="20sp"
+                android:paddingLeft="8dp"
+                android:text="Список юристов"
+                android:id="@+id/txt_title" />
 
-Proin nunc erat, sodales sit amet ligula eget, sodales bibendum libero. Vestibulum blandit ultrices ex. Curabitur non eleifend lacus. Cras sit amet lacinia nisi. Quisque euismod dictum fringilla. Curabitur sagittis purus ac justo egestas aliquet. Nullam porttitor, purus pellentesque consectetur facilisis, urna velit iaculis ipsum, vel placerat est ligula vitae diam. In vulputate lacus sed massa feugiat tempus. Nullam blandit turpis mi, sed volutpat nisi dictum sed. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec non feugiat nunc. Vestibulum et ex quis neque efficitur molestie. Vestibulum facilisis nisl ligula, sit amet pretium elit pharetra venenatis. Donec vel elementum purus, a placerat quam.
-
-Suspendisse id tellus convallis, pellentesque risus id, interdum purus. Donec finibus sodales nisi, a vehicula justo pellentesque non. Cras id ipsum pulvinar, volutpat massa et, aliquet tortor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus nisi orci, vestibulum vitae interdum sed, commodo ut leo. Donec eget sagittis tortor. Vestibulum pulvinar sagittis nisl sit amet bibendum. Vivamus sed condimentum risus, eget accumsan nisl. Curabitur sed pellentesque tortor.
-
-Suspendisse eleifend ultricies luctus. Nullam rutrum turpis at erat tempus, vel mollis augue tempus. Curabitur id efficitur purus. Aenean dapibus porta placerat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque a enim id nisi tempus elementum nec et felis. Nunc suscipit ut justo blandit porttitor. Pellentesque placerat, nunc at tristique ullamcorper, ipsum tellus rutrum nisl, et eleifend ex neque ut metus. Proin interdum efficitur nulla, sit amet dapibus nulla pretium eu.
-
-Aenean sit amet nisi quis lorem faucibus eleifend a eget orci. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Cras eget pharetra risus. Donec eleifend posuere lacus, vel tincidunt augue. Sed malesuada nec turpis euismod rhoncus. Quisque in pulvinar massa, id dictum risus. Nam id mattis sapien. Pellentesque et mi quis lorem rutrum ultricies quis et arcu. Curabitur ac sapien volutpat, consequat risus sit amet, laoreet velit. Sed rutrum, nulla dapibus porttitor pellentesque, nisl felis laoreet massa, non accumsan arcu justo at lacus. In nulla massa, vestibulum vitae urna at, efficitur suscipit augue. "/>
-
-
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/txt_title"
+                android:layout_marginTop="10dp"/>
         </LinearLayout>
     </ScrollView>
 </RelativeLayout>
