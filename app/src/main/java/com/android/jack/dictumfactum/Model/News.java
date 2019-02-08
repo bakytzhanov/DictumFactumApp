@@ -4,12 +4,17 @@ public class News {
     private String id;
     private String header;
     private String field;
+    private String imageURL;
 
 
-    public News(String id, String header, String field) {
+
+
+    public News(String id, String header, String field, String imageURL) {
         this.id = id;
         this.header = header;
         this.field = field;
+        this.imageURL = imageURL;
+
     }
 
     public News() {
@@ -35,6 +40,13 @@ public class News {
 
     public void setField(String field) {
         this.field = field;
+    }
+    public String getImageURL() {
+        return imageURL;
+    }
+
+    public void setImageURL(String imageURL) {
+        this.imageURL = imageURL;
     }
 }
 
