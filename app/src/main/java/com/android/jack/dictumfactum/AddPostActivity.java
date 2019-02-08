@@ -78,7 +78,7 @@ public class AddPostActivity extends AppCompatActivity {
                 reference.child("header").setValue(txt_header);
                 reference.child("field").setValue(txt_field);
 
-
+                finish();
 
             }
         });

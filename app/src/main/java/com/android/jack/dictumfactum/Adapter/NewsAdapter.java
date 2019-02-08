@@ -53,8 +53,10 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ViewHolder> {
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         final News news = mNews.get(position);
         holder.header_post.setText(news.getHeader());
+        holder.def.setText(news.getField());
 
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
+
+        holder.learn_more.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(mContext, PostActivity.class);
@@ -73,12 +75,17 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ViewHolder> {
     public class ViewHolder extends RecyclerView.ViewHolder{
 
         public TextView header_post;
+        public TextView def;
+        public TextView learn_more;
 
 
         public ViewHolder(View itemView){
             super(itemView);
 
             header_post = itemView.findViewById(R.id.header_post);
+            def = itemView.findViewById(R.id.def);
+            learn_more = itemView.findViewById(R.id.learn_more);
+
         }
 
 
