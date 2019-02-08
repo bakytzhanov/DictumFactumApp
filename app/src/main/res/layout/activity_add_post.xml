@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddPostActivity">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/bar_layout" />
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/toolbar">
+<RelativeLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+
+    <EditText
+        android:id="@+id/header_post"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Введите заголовок"
+        android:textAlignment="center"
+        android:layout_margin="10dp"
+        android:layout_marginTop="50dp"
+        android:textSize="20sp"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/header_post"
+        android:id="@+id/field_post"
+        android:gravity="left|top"
+        android:layout_margin="10dp"
+        android:textSize="14dp"
+        android:hint="Введите ваш текст"
+        android:lines="7"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/field_post"
+        android:id="@+id/add_one_post"
+        android:background="#203141"
+        android:textColor="#ffffff"
+        android:text="Добавить"
+        android:layout_margin="10dp"/>
+
+</RelativeLayout>
+    </ScrollView>
+</RelativeLayout>
